@@ -1,0 +1,297 @@
+{
+  "status": "success",
+  "scrape_time": "2026-01-03T12:00:00",
+  "source": "https://zcodesystem.com/scorespredictor/?hop=sportsmart",
+  "filter": {
+    "min_confidence": "60%"
+  },
+  "summary": {
+    "total_predictions": 15,
+    "sports_covered": 1,
+    "breakdown": {
+      "Football": 15
+    }
+  },
+  "high_value_predictions": [
+    {
+      "date_time": "29th Nov 2025, 10:00 ET",
+      "team1": "Paralimni",
+      "team2": "Aris (Cyprus)",
+      "score_first_half": "1:1",
+      "score_final": "1:2",
+      "confidence": "82.7%",
+      "confidence_value": 82.7,
+      "prob_team1_win": "34.31%",
+      "prob_draw": "25.8%",
+      "prob_team2_win": "39.89%",
+      "sport": "Football",
+      "league": "Cyprus First Division"
+    },
+    {
+      "date_time": "29th Nov 2025, 11:00 ET",
+      "team1": "BW Linz",
+      "team2": "Grazer",
+      "score_first_half": "0:2",
+      "score_final": "1:2",
+      "confidence": "76.9%",
+      "confidence_value": 76.9,
+      "prob_team1_win": "31.79%",
+      "prob_draw": "32.3%",
+      "prob_team2_win": "35.91%",
+      "sport": "Football",
+      "league": "Austria Tipico Bundesliga"
+    },
+    {
+      "date_time": "29th Nov 2025, 16:00 ET",
+      "team1": "Palestino",
+      "team2": "La Serena",
+      "score_first_half": "1:1",
+      "score_final": "1:1",
+      "confidence": "71.2%",
+      "confidence_value": 71.2,
+      "prob_team1_win": "18.37%",
+      "prob_draw": "62.7%",
+      "prob_team2_win": "18.93%",
+      "sport": "Football",
+      "league": "Chile Primera Division"
+    },
+    {
+      "date_time": "29th Nov 2025, 14:00 ET",
+      "team1": "Anderlecht U23",
+      "team2": "K. Lierse S.K.",
+      "score_first_half": "1:1",
+      "score_final": "1:2",
+      "confidence": "67.5%",
+      "confidence_value": 67.5,
+      "prob_team1_win": "29.29%",
+      "prob_draw": "29.91%",
+      "prob_team2_win": "40.8%",
+      "sport": "Football",
+      "league": "Belgium Proximus League"
+    },
+    {
+      "date_time": "29th Nov 2025, 08:00 ET",
+      "team1": "Karvan",
+      "team2": "Qarabag",
+      "score_first_half": "0:1",
+      "score_final": "0:1",
+      "confidence": "69.1%",
+      "confidence_value": 69.1,
+      "prob_team1_win": "36.6%",
+      "prob_draw": "18.9%",
+      "prob_team2_win": "44.5%",
+      "sport": "Football",
+      "league": "Azerbaijan Premier League"
+    },
+    {
+      "date_time": "29th Nov 2025, 05:30 ET",
+      "team1": "Sabah Baku",
+      "team2": "Imisli FK",
+      "score_first_half": "0:0",
+      "score_final": "2:1",
+      "confidence": "67.3%",
+      "confidence_value": 67.3,
+      "prob_team1_win": "39.5%",
+      "prob_draw": "33.62%",
+      "prob_team2_win": "26.88%",
+      "sport": "Football",
+      "league": "Azerbaijan Premier League"
+    },
+    {
+      "date_time": "29th Nov 2025, 08:00 ET",
+      "team1": "Annaba",
+      "team2": "MO Constantine",
+      "score_first_half": "0:0",
+      "score_final": "1:1",
+      "confidence": "66.3%",
+      "confidence_value": 66.3,
+      "prob_team1_win": "29.05%",
+      "prob_draw": "40.7%",
+      "prob_team2_win": "30.25%",
+      "sport": "Football",
+      "league": "Algeria Ligue 2"
+    },
+    {
+      "date_time": "29th Nov 2025, 06:00 ET",
+      "team1": "ML Vitebsk",
+      "team2": "Din. Minsk",
+      "score_first_half": "0:0",
+      "score_final": "1:2",
+      "confidence": "63.4%",
+      "confidence_value": 63.4,
+      "prob_team1_win": "28.62%",
+      "prob_draw": "32.48%",
+      "prob_team2_win": "38.9%",
+      "sport": "Football",
+      "league": "Belarus Vysshaya Liga"
+    },
+    {
+      "date_time": "29th Nov 2025, 10:00 ET",
+      "team1": "U. Catolica (Chile)",
+      "team2": "Huachipato",
+      "score_first_half": "1:1",
+      "score_final": "2:1",
+      "confidence": "62.8%",
+      "confidence_value": 62.8,
+      "prob_team1_win": "59.4%",
+      "prob_draw": "21.35%",
+      "prob_team2_win": "19.25%",
+      "sport": "Football",
+      "league": "Chile Primera Division"
+    },
+    {
+      "date_time": "29th Nov 2025, 08:00 ET",
+      "team1": "Arba",
+      "team2": "Adrar",
+      "score_first_half": "0:1",
+      "score_final": "1:1",
+      "confidence": "65.3%",
+      "confidence_value": 65.3,
+      "prob_team1_win": "22.69%",
+      "prob_draw": "54%",
+      "prob_team2_win": "23.31%",
+      "sport": "Football",
+      "league": "Algeria Ligue 2"
+    },
+    {
+      "date_time": "29th Nov 2025, 14:45 ET",
+      "team1": "RAAL La Louviere",
+      "team2": "Charleroi",
+      "score_first_half": "1:1",
+      "score_final": "1:2",
+      "confidence": "56.8%",
+      "confidence_value": 56.8,
+      "prob_team1_win": "34.01%",
+      "prob_draw": "27.5%",
+      "prob_team2_win": "38.49%",
+      "sport": "Football",
+      "league": "Belgium Jupiler League"
+    },
+    {
+      "date_time": "29th Nov 2025, 08:45 ET",
+      "team1": "Green Farmers",
+      "team2": "Garage Express",
+      "score_first_half": "1:0",
+      "score_final": "2:2",
+      "confidence": "55.5%",
+      "confidence_value": 55.5,
+      "prob_team1_win": "19.07%",
+      "prob_draw": "60%",
+      "prob_team2_win": "20.93%",
+      "sport": "Football",
+      "league": "Burundi Primus League"
+    },
+    {
+      "date_time": "29th Nov 2025, 07:00 ET",
+      "team1": "Kayanza",
+      "team2": "Aigle Noir",
+      "score_first_half": "0:1",
+      "score_final": "0:1",
+      "confidence": "50.7%",
+      "confidence_value": 50.7,
+      "prob_team1_win": "37.4%",
+      "prob_draw": "17.8%",
+      "prob_team2_win": "44.8%",
+      "sport": "Football",
+      "league": "Burundi Primus League"
+    },
+    {
+      "date_time": "29th Nov 2025, 06:00 ET",
+      "team1": "Slavia Mozyr",
+      "team2": "Vitebsk",
+      "score_first_half": "2:1",
+      "score_final": "2:2",
+      "confidence": "56.8%",
+      "confidence_value": 56.8,
+      "prob_team1_win": "25.96%",
+      "prob_draw": "48.3%",
+      "prob_team2_win": "25.74%",
+      "sport": "Football",
+      "league": "Belarus Vysshaya Liga"
+    },
+    {
+      "date_time": "29th Nov 2025, 06:00 ET",
+      "team1": "Dynamo Brest",
+      "team2": "Slutsk",
+      "score_first_half": "0:0",
+      "score_final": "2:1",
+      "confidence": "49.4%",
+      "confidence_value": 49.4,
+      "prob_team1_win": "39.9%",
+      "prob_draw": "32.79%",
+      "prob_team2_win": "27.31%",
+      "sport": "Football",
+      "league": "Belarus Vysshaya Liga"
+    }
+  ],
+  "predictions_by_sport": {
+    "Football": [
+      {
+        "sport": "Football",
+        "league": "Cyprus First Division",
+        "date_time": "29th Nov 2025, 10:00 ET",
+        "match": {
+          "team1": "Paralimni",
+          "team2": "Aris (Cyprus)"
+        },
+        "predictions": {
+          "first_half_score": "1:1",
+          "final_score": "1:2"
+        },
+        "confidence": {
+          "overall_percentage": "82.7%",
+          "overall_numeric": 82.7
+        },
+        "per_outcome_confidence": {
+          "team1_win": "34.31%",
+          "draw": "25.8%",
+          "team2_win": "39.89%"
+        }
+      },
+      {
+        "sport": "Football",
+        "league": "Austria Tipico Bundesliga",
+        "date_time": "29th Nov 2025, 11:00 ET",
+        "match": {
+          "team1": "BW Linz",
+          "team2": "Grazer"
+        },
+        "predictions": {
+          "first_half_score": "0:2",
+          "final_score": "1:2"
+        },
+        "confidence": {
+          "overall_percentage": "76.9%",
+          "overall_numeric": 76.9
+        },
+        "per_outcome_confidence": {
+          "team1_win": "31.79%",
+          "draw": "32.3%",
+          "team2_win": "35.91%"
+        }
+      },
+      {
+        "sport": "Football",
+        "league": "Chile Primera Division",
+        "date_time": "29th Nov 2025, 16:00 ET",
+        "match": {
+          "team1": "Palestino",
+          "team2": "La Serena"
+        },
+        "predictions": {
+          "first_half_score": "1:1",
+          "final_score": "1:1"
+        },
+        "confidence": {
+          "overall_percentage": "71.2%",
+          "overall_numeric": 71.2
+        },
+        "per_outcome_confidence": {
+          "team1_win": "18.37%",
+          "draw": "62.7%",
+          "team2_win": "18.93%"
+        }
+      }
+    ]
+  }
+}

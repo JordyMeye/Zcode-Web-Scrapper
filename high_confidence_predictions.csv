@@ -1,38 +1,54 @@
-date_time,team1,team2,score_first_half,score_final,confidence,confidence_value,prob_team1_win,prob_draw,prob_team2_win
-"Argentina Primera B National30th Nov 2025,15:00 ET",Estudiantes Rio Cuarto6.880,Deportivo Madryn1.600,1:0,1:2,77.7%,77.7,33.57%,28%,38.43%
-"Armenia Premier League30th Nov 2025,08:00 ET",Shirak Gyumri11.200,Ararat-Armenia1.190,0:1,0:1,61.1%,61.1,36.91%,18.4%,44.69%
-"Armenia Premier League30th Nov 2025,10:00 ET",Ararat Yerevan12.000,Pyunik Yerevan1.178,0:1,1:2,67.6%,67.6,34.87%,21.4%,43.73%
-"Belgium Proximus League30th Nov 2025,10:00 ET",Club Brugge KV U23,Seraing,0:1,1:2,84%,84.0,30.69%,34%,35.31%
-"Bolivia Liga de Futbol Prof30th Nov 2025,16:15 ET",Bolivar1.840,The Strongest3.415,1:1,2:2,87.8%,87.8,19.42%,62.8%,17.78%
-"Bulgaria Parva Liga30th Nov 2025,05:30 ET",Dobrudzha5.060,Slavia Sofia1.650,0:1,0:1,60.6%,60.6,36.21%,19.2%,44.59%
-"Cyprus First Division30th Nov 2025,12:00 ET",Apollon Limassol2.110,AEL Limassol3.490,0:0,1:1,65%,65.0,25.32%,51%,23.68%
-"Denmark Superliga30th Nov 2025,10:00 ET",Nordsjaelland4.260,Midtjylland1.710,0:1,1:2,77.1%,77.1,33.61%,26.6%,39.79%
-"England Premier League30th Nov 2025,09:05 ET",Brighton2.705,Nottingham2.807,1:1,1:1,65%,65.0,28.87%,41.9%,29.23%
-"England Premier League30th Nov 2025,11:30 ET",Arsenal2.372,Chelsea3.445,0:1,2:2,69.3%,69.3,19.73%,63%,17.27%
-"Ethiopia Premier League30th Nov 2025,05:00 ET",Welayta Dicha3.155,Fasil Kenema2.420,1:1,1:2,67.3%,67.3,32.75%,30%,37.25%
-"Ethiopia Premier League30th Nov 2025,08:00 ET",Mekelle 70 Enderta F.C.2.040,Welwalo Adigrat3.855,0:0,1:0,71%,71.0,36.58%,33.2%,30.22%
-"Germany 2. Bundesliga30th Nov 2025,07:30 ET",Darmstadt3.650,Elversberg1.920,0:1,1:2,64.9%,64.9,30.12%,31%,38.88%
-"Germany 2. Bundesliga30th Nov 2025,07:30 ET",Dusseldorf2.958,SG Dynamo Dresden2.300,0:2,1:2,69.3%,69.3,28.03%,34.07%,37.9%
-"Germany 3. Liga30th Nov 2025,07:30 ET",Hansa Rostock1.929,Regensburg3.445,1:0,2:1,67.2%,67.2,39.1%,32.24%,28.66%
-"Germany Bundesliga30th Nov 2025,09:30 ET",VfB Stuttgart2.235,Hamburger3.250,1:1,2:1,63.6%,63.6,37.94%,29.8%,32.26%
-"Greece Super League30th Nov 2025,10:00 ET",Olympiakos Piraeus1.320,Panetolikos9.100,1:0,2:1,70.1%,70.1,57.6%,22.73%,19.67%
-"Greece Super League30th Nov 2025,14:00 ET",AEK2.933,Panathinaikos2.520,1:1,1:2,70.6%,70.6,25.54%,27.46%,47%
-"Indonesia Liga 130th Nov 2025,03:30 ET",Bali United5.270,Borneo1.540,0:0,1:2,72.7%,72.7,29.12%,31.9%,38.98%
-"Japan J-League30th Nov 2025,00:00 ET",Shimizu S-Pulse2.477,Shonan Bellmare2.795,0:1,2:1,66.6%,66.6,50.3%,26.09%,23.61%
-"Morocco Botola 230th Nov 2025,09:00 ET",Amal Tiznit,US Boujaad,1:0,1:2,60.1%,60.1,26.11%,26.29%,47.6%
-"Nicaragua Liga Primera30th Nov 2025,20:00 ET",Managua FC,Esteli,0:1,1:1,63.6%,63.6,28.3%,42.2%,29.5%
-"Norway 1. Division30th Nov 2025,11:00 ET",Bryne1.987,Haugesund3.625,2:1,2:2,66.4%,66.4,21.33%,60.4%,18.27%
-"Norway 1. Division30th Nov 2025,11:00 ET",Stromsgodset5.780,Rosenborg1.486,0:1,0:1,70.4%,70.4,34.13%,21.9%,43.97%
-"Romania Liga 230th Nov 2025,05:30 ET",Metalul Buzau2.863,CSM Resita2.350,1:1,1:2,67.7%,67.7,34.28%,26.9%,38.82%
-"Romania Liga I30th Nov 2025,10:30 ET",FC Botosani2.030,Unirea Slobozia3.550,1:0,1:0,72%,72.0,37.78%,30.8%,31.42%
-"Slovakia Corgon Liga30th Nov 2025,12:00 ET",Zilina2.420,Podbrezova2.560,1:1,2:1,70.2%,70.2,35.7%,34.45%,29.85%
-"Slovenia Prva Liga30th Nov 2025,11:30 ET",Koper5.320,Celje1.500,1:1,1:2,62.8%,62.8,30.16%,31.2%,38.64%
-"South Africa Premier League30th Nov 2025,08:30 ET",Magesi3.170,Marumo Gallants2.370,0:0,0:1,76.5%,76.5,29.15%,34.65%,36.2%
-"Spain Primera Division30th Nov 2025,08:00 ET",Villarreal2.641,Real Sociedad2.895,0:1,1:1,75.5%,75.5,19.8%,60.8%,19.4%
-"Spain Primera Division30th Nov 2025,10:15 ET",Betis2.613,Sevilla2.968,1:1,2:2,72.6%,72.6,27.64%,46.5%,25.86%
-"Spain Segunda RFEF - Group 330th Nov 2025,06:00 ET",Andratx4.085,Torrent1.870,0:1,1:2,71.6%,71.6,32.01%,29.8%,38.19%
-"Spain Segunda RFEF - Group 430th Nov 2025,06:00 ET",Melilla3.390,Puente Genil2.150,1:0,1:2,71.9%,71.9,33.06%,29.8%,37.14%
-"Turkey Super Lig30th Nov 2025,09:00 ET",Goztepe2.027,Antalyaspor4.135,0:1,2:1,67.5%,67.5,38.91%,26.2%,34.89%
-"Turkmenistan Yokary Liga030th Nov 2025,05:00 ET",Merw,Arkadag,0:2,1:2,74.3%,74.3,32.79%,30.3%,36.91%
-"Uzbekistan Super League30th Nov 2025,05:00 ET",Neftchi Fargona1.530,Xorazm Urganch6.130,0:0,2:1,64.1%,64.1,56.7%,22.7%,20.6%
-"Zambia Super League30th Nov 2025,02:30 ET",Mines9.300,Kabwe1.370,0:0,1:1,66.6%,66.6,29.17%,40.7%,30.13%
+date_time,league,sport,team1,team2,score_first_half,score_final,confidence,confidence_value,prob_team1_win,prob_draw,prob_team2_win
+"29th Nov 2025,08:00 ET",Algeria Ligue 2,Football,Annaba,MO Constantine,0:0,1:1,66.3%,66.3,29.05%,40.7%,30.25%
+"29th Nov 2025,08:00 ET",Algeria Ligue 2,Football,Arba,Adrar,0:1,1:1,65.3%,65.3,22.69%,54%,23.31%
+"29th Nov 2025,11:00 ET",Austria Tipico Bundesliga,Football,BW Linz,Grazer,0:2,1:2,76.9%,76.9,31.79%,32.3%,35.91%
+"29th Nov 2025,05:30 ET",Azerbaijan Premier League,Football,Sabah Baku,Imisli FK,0:0,2:1,67.3%,67.3,39.5%,33.62%,26.88%
+"29th Nov 2025,08:00 ET",Azerbaijan Premier League,Football,Karvan,Qarabag,0:1,0:1,69.1%,69.1,36.6%,18.9%,44.5%
+"29th Nov 2025,06:00 ET",Belarus Vysshaya Liga,Football,ML Vitebsk,Din. Minsk,0:0,1:2,63.4%,63.4,28.62%,32.48%,38.9%
+"29th Nov 2025,14:00 ET",Belgium Proximus League,Football,Anderlecht U23,K. Lierse S.K.,1:1,1:2,67.5%,67.5,29.29%,29.91%,40.8%
+"29th Nov 2025,10:00 ET",Chile Primera Division,Football,U. Catolica (Chile),Huachipato,1:1,2:1,62.8%,62.8,59.4%,21.35%,19.25%
+"29th Nov 2025,16:00 ET",Chile Primera Division,Football,Palestino,La Serena,1:1,1:1,71.2%,71.2,18.37%,62.7%,18.93%
+"29th Nov 2025,10:00 ET",Cyprus First Division,Football,Paralimni,Aris (Cyprus),1:1,1:2,82.7%,82.7,34.31%,25.8%,39.89%
+"29th Nov 2025,20:00 ET",El Salvador Primera Division,Football,Platense Municipal,Luis Angel Firpo,0:0,1:2,76.6%,76.6,35.03%,25.6%,39.37%
+"29th Nov 2025,20:15 ET",El Salvador Primera Division,Football,Aguila,Metapan,0:1,1:2,60%,60.0,27.84%,31.16%,41%
+"29th Nov 2025,10:00 ET",England Championship,Football,Charlton,Coventry,0:1,0:1,66.4%,66.4,36.75%,19.1%,44.15%
+"29th Nov 2025,10:00 ET",England League One,Football,Stevenage,Wigan,1:0,1:2,61.1%,61.1,28.84%,32.26%,38.9%
+"29th Nov 2025,07:30 ET",England League Two,Football,Oldham,Accrington,1:0,1:2,64.2%,64.2,28.49%,30.41%,41.1%
+"29th Nov 2025,10:00 ET",England National L. North,Football,Worksop,Leamington,1:1,2:1,74.6%,74.6,57.5%,22.7%,19.8%
+"29th Nov 2025,10:00 ET",England National L. South,Football,Enfield Town,Bath City,1:1,1:2,64.8%,64.8,32.6%,30.6%,36.8%
+"29th Nov 2025,10:00 ET",England National L. South,Football,Torquay,Chelmsford,1:1,2:2,66.6%,66.6,24.44%,53.5%,22.06%
+"29th Nov 2025,10:00 ET",England National L. South,Football,Dorking,Chesham,0:0,2:1,71.2%,71.2,38.52%,26.6%,34.88%
+"29th Nov 2025,10:00 ET",England National L. South,Football,Hampton & Richmond,Eastbourne Borough,0:0,1:2,60.4%,60.4,32.3%,31%,36.7%
+"29th Nov 2025,10:00 ET",England National L. South,Football,Hornchurch,Worthing,1:2,1:2,71.1%,71.1,28.37%,33.23%,38.4%
+"29th Nov 2025,10:00 ET",England National League,Football,Southend,Forest Green,0:1,1:2,65.2%,65.2,30.33%,30.8%,38.87%
+"29th Nov 2025,10:00 ET",England National League,Football,Eastleigh,Rochdale,0:1,0:1,72.1%,72.1,37.35%,17.9%,44.75%
+"29th Nov 2025,10:00 ET",England National League,Football,Aldershot,York,0:1,0:4,83.7%,83.7,34.62%,19.6%,45.78%
+"29th Nov 2025,10:00 ET",England Premier League,Football,Leeds,Manchester City,0:1,0:3,72.3%,72.3,35.31%,21%,43.69%
+"29th Nov 2025,15:00 ET",England Premier League,Football,Fulham,Tottenham,1:1,1:2,85%,85.0,34.46%,26.9%,38.64%
+"29th Nov 2025,07:30 ET",France Coupe de France,Football,Montpellier,Montceau,1:0,2:1,63.9%,63.9,57.8%,22.1%,20.1%
+"29th Nov 2025,10:30 ET",Germany 3. Liga,Football,Mannheim,Schweinfurt,0:0,3:1,83.8%,83.8,44.71%,18.4%,36.89%
+"29th Nov 2025,09:30 ET",Germany Bundesliga,Football,FC Koln,Werder Bremen,1:0,1:2,71.2%,71.2,29.14%,31%,39.86%
+"29th Nov 2025,12:30 ET",Germany Bundesliga,Football,Dortmund,Bayer Leverkusen,1:1,1:2,62.8%,62.8,26.91%,30.09%,43%
+"29th Nov 2025,11:00 ET",Ghana Premier League,Football,Vision,Hearts of Oak,0:0,1:2,64.2%,64.2,34.52%,27.5%,37.98%
+"29th Nov 2025,13:30 ET",Gibraltar National League,Football,Mons Calpe,Europa FC,2:2,2:2,74.9%,74.9,19.27%,60.9%,19.83%
+"29th Nov 2025,12:30 ET",Greece Super League,Football,Panserraikos,Kifisias,0:1,1:2,62.3%,62.3,33.8%,24.5%,41.7%
+"29th Nov 2025,09:00 ET",Italy Serie A,Football,Udinese,Parma,0:1,1:2,69.1%,69.1,30.33%,33%,36.67%
+"29th Nov 2025,00:00 ET",Japan J2-League,Football,Ehime,Hokkaido Consadole Sapporo,1:0,2:2,61.9%,61.9,28.23%,39.6%,32.17%
+"29th Nov 2025,18:00 ET",Mexico Primera Division,Football,Monterrey,Club America,1:0,1:2,63.9%,63.9,35.26%,25%,39.74%
+"29th Nov 2025,12:45 ET",Netherlands Eredivisie,Football,Heracles,Sittard,1:1,1:3,64%,64.0,32.88%,28%,39.12%
+"29th Nov 2025,13:30 ET",Poland Division 1,Football,Chrobry Glogow,Odra Opole,0:1,2:1,62.6%,62.6,52.7%,23.83%,23.47%
+"29th Nov 2025,10:30 ET",Portugal Primeira Liga,Football,Famalicao,Moreirense,0:0,2:1,62.6%,62.6,39.36%,25.2%,35.44%
+"29th Nov 2025,04:00 ET",Romania Liga 2,Football,CSM Slatina,Selimbar,1:2,1:2,68.4%,68.4,28.27%,31.43%,40.3%
+"29th Nov 2025,04:00 ET",Romania Liga 2,Football,Ceahlaul,Steaua Bucuresti,0:1,0:1,79.6%,79.6,36.91%,18.4%,44.69%
+"29th Nov 2025,09:30 ET",Slovakia Corgon Liga,Football,Kosice,Ruzomberok,0:1,1:2,73.9%,73.9,34.21%,23.4%,42.39%
+"29th Nov 2025,08:30 ET",South Africa Premier League,Football,Orlando Pirates,Durban City,1:0,2:1,87.5%,87.5,58.9%,21.83%,19.27%
+"29th Nov 2025,11:00 ET",South Africa Premier League,Football,Chippa Utd.,Siwelele,0:0,0:1,63.9%,63.9,37.94%,17.3%,44.76%
+"29th Nov 2025,15:00 ET",Spain Primera Division,Football,R. Oviedo,Atl. Madrid,0:0,1:2,74.1%,74.1,35.59%,22%,42.41%
+"29th Nov 2025,12:30 ET",Spain Primera RFEF - Group 2,Football,Marbella,Sevilla FC B,0:0,1:2,67.8%,67.8,28.79%,32.91%,38.3%
+"29th Nov 2025,15:00 ET",Spain Segunda Division,Football,Malaga,Valladolid,0:1,1:2,68%,68.0,32.27%,30.6%,37.13%
+"29th Nov 2025,10:30 ET",Spain Segunda RFEF - Group 2,Football,Basconia,Mutilvera,0:1,1:2,71.9%,71.9,31.73%,30.9%,37.37%
+"29th Nov 2025,06:00 ET",Thailand Thai Premier League,Football,Nakhon Ratchasima,Uthai Thani,1:1,1:2,68.1%,68.1,28.26%,33.24%,38.5%
+"29th Nov 2025,21:00 ET",USA MLS,Football,Vancouver Whitecaps,San Diego FC,0:1,1:2,60.9%,60.9,30.87%,30.4%,38.73%
+"29th Nov 2025,05:00 ET",Uzbekistan Super League,Football,Shortan Guzor,Qizilqum,1:1,1:2,70.1%,70.1,31.98%,32.5%,35.52%
+"29th Nov 2025,09:30 ET",Wales Premier League,Football,Flint,Briton Ferry,1:0,2:2,64.2%,64.2,29.83%,42.8%,27.37%
+"29th Nov 2025,09:30 ET",Wales Premier League,Football,Connahs Q.,Llanelli,1:0,1:0,82.1%,82.1,43.46%,23.5%,33.04%
