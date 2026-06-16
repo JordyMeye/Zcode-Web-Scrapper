@@ -1,0 +1,40 @@
+sport,tournament,round,date_time,player1,player2,odds_player1,odds_player2,set_prediction,match_score,confidence,confidence_value,prob_player1_win,prob_player2_win
+Tennis,"Germany ATP - SINGLES: Halle, grass",,"15th Jun 2026,05:30 EDT",Tien L.,Schoenhaus M.,1.180,5.050,"3:0(6:4, 6:4, 6:4)",77.76%,85.7%,85.7,14.3%,"2:0(6:2, 6:4)"
+Tennis,ITF M25 Klosters Men,,"15th Jun 2026,06:21 EDT",Imberley Zimmermann,Genier T.,1.860,1.820,"3:0(6:4, 6:4, 7:4)",85.23%,81.5%,81.5,18.5%,"1:2(6:2, 1:6, 5:10)"
+Tennis,Germany ATP,,"15th Jun 2026,08:40 EDT",Felix Auger Aliassime,Borges N.,1.343,3.305,"3:0(6:4, 7:5, 7:5)",54.53%,80.6%,80.6,19.4%,"2:1(6:3, 3:6, 6:3, 0:0)"
+Tennis,"Germany ATP - SINGLES: Halle, grass",,"15th Jun 2026,07:20 EDT",Landaluce M.,Atmane T.,1.510,2.598,"3:0(6:4, 6:4, 7:5)",54.45%,73.3%,73.3,26.7%,"1:2(3:6, 6:3, 6:7)"
+Tennis,"Poland CHALLENGER MEN - SINGLES: Poznan - Qualification, clay",,"15th Jun 2026,04:00 EDT",Karol M.,Michael Vrbensky,1.368,2.763,"2:0(6:4, 6:3)",85.44%,73%,73.0,27%,"2:0(7:6, 6:1)"
+Tennis,Spain ITF M15 Mungia-Laukariz Men Doubles,,"15th Jun 2026,10:01 EDT",Cordoba C./Planella Hernandez S.,Arce Fernandez M./Talavera Cortes E.,1.290,3.500,"2:0(6:1, 6:1)",58.4%,72.8%,72.8,27.2%,"0:2(3:6, 2:6)"
+Tennis,ITF M15 Tokyo 2 Men,,"15th Jun 2026,01:54 EDT",Heck H.,Taka Y.,6.000,1.110,"2:0(6:3, 6:4)",68.31%,72.5%,72.5,27.5%,"0:2(1:6, 6:7)"
+Tennis,ITF W35 Klosters Women,,"15th Jun 2026,04:10 EDT",Gabriel A.,Samardzic A. E.,1.360,2.894,"2:0(7:5, 6:4)",87.41%,72.4%,72.4,27.6%,"2:0(6:1, 6:1)"
+Tennis,"Italy CHALLENGER WOMEN - SINGLES: Brescia, clay",,"15th Jun 2026,11:30 EDT",Brancaccio N.,Ekatarine Gorgodze,1.250,3.750,"2:0(6:3, 6:2)",52.95%,72.4%,72.4,27.6%,0:0(2:3)
+Tennis,"Poland CHALLENGER MEN - SINGLES: Poznan - Qualification, clay",,"15th Jun 2026,04:20 EDT",Marti Pujolras A.,Rehberg M. H.,2.415,1.500,"2:0(6:4, 6:4)",61.13%,72.1%,72.1,27.9%,"0:2(3:6, 1:6)"
+Tennis,"Italy CHALLENGER WOMEN - SINGLES: Brescia, clay",,"15th Jun 2026,08:00 EDT",Semenistaja D.,Ekatarine Gorgodze,1.074,6.400,"2:0(6:3, 6:2)",61.79%,71.8%,71.8,28.2%,canc.
+Tennis,"Spain ITF WOMEN - DOUBLES: W35+H Tauste, hard",,"15th Jun 2026,14:00 EDT",Ferlito Faticanti A./Garcia-Perez G.,Muelle Valdez Y. L./Muro Castellvi C.,1.110,6.000,"2:0(7:5, 6:4)",77.69%,71.8%,71.8,28.2%,
+Tennis,"Germany WTA - SINGLES: Berlin, grass",,"15th Jun 2026,09:30 EDT",Shnaider D.,Bartunkova N.,1.500,2.599,"2:0(6:3, 6:4)",54.17%,71.7%,71.7,28.3%,"1:1(2:6, 7:6, 3:5)"
+Tennis,ITF M25 Klosters Men,,"15th Jun 2026,08:06 EDT",Sebesta J.,Stroemberg I.,2.564,1.450,"3:1(4:6, 6:4, 6:4, 7:5)",70.63%,71.5%,71.5,28.5%,"2:1(6:4, 5:7, 10:6)"
+Tennis,ITF W35 Taipei Women,,"15th Jun 2026,22:00 EDT",Naito Yuki,Ayano Shimizu,1.410,2.754,"2:0(6:4, 7:5)",56.92%,71.1%,71.1,28.9%,
+Tennis,France Challenger,,"15th Jun 2026,06:00 EDT",Thomas Fancutt,Demanet E.,3.150,1.310,"2:0(7:6, 6:4)",51.11%,71.1%,71.1,28.9%,"0:2(5:7, 2:6)"
+Tennis,Spain ITF M15 Mungia-Laukariz Men,,"15th Jun 2026,08:22 EDT",Pavel Lagutin,Marino P.,1.270,3.410,"2:0(7:5, 6:4)",59.05%,70.9%,70.9,29.1%,"0:2(4:6, 2:6)"
+Tennis,"Paraguay CHALLENGER MEN - SINGLES: Asuncion 2, clay",,"15th Jun 2026,16:00 EDT",Nick Hardt,Fernandez B.,1.079,6.200,"2:0(7:5, 6:4)",85.03%,70.7%,70.7,29.3%,
+Tennis,"United Kingdom ATP - DOUBLES: London, grass",,"15th Jun 2026,08:00 EDT",Cash J./Glasspool L.,Cerundolo F./Nakashima B.,1.140,5.500,"2:0(7:5, 7:5)",69.4%,70.7%,70.7,29.3%,"2:0(7:5, 6:4)"
+Tennis,"Germany WTA - SINGLES: Berlin - Qualification, grass",,"15th Jun 2026,04:30 EDT",Anhelina Kalinina,Lulu Sun,1.568,2.410,"2:0(6:4, 6:4)",58.78%,70.2%,70.2,29.8%,"2:0(6:4, 6:3)"
+Tennis,ITF W15 Luque Women,,"15th Jun 2026,09:07 EDT",Rossini T.,Bueno H.,1.440,2.594,"2:0(6:3, 6:4)",73.28%,70%,70.0,30%,"2:0(6:1, 6:2)"
+Tennis,"Germany WTA - SINGLES: Berlin, grass",,"15th Jun 2026,04:00 EDT",Cori Gauff,Bartunkova N.,1.179,4.935,"2:0(7:5, 7:5)",83.8%,70%,70.0,30%,canc.
+Tennis,Japan ITF M15 Tokyo 2 Men,,"15th Jun 2026,22:30 EDT",Matsuoka S.,Kusuhara Y.,1.480,2.474,"2:0(6:3, 7:5)",75.36%,69.9%,69.9,30.1%,
+Tennis,ITF W35 Taipei Women,,"15th Jun 2026,22:00 EDT",Saito S.,Nishimura Kayo,1.250,3.565,"2:0(7:5, 6:4)",62.79%,69.4%,69.4,30.6%,
+Tennis,"Germany ATP - DOUBLES: Halle, grass",,"15th Jun 2026,05:45 EDT",Schnaitter J./Wallner M.,Etcheverry T. M./Kecmanovic M.,1.330,3.250,"2:0(7:5, 6:4)",65.56%,69.1%,69.1,30.9%,"2:0(7:6, 6:3)"
+Tennis,ITF W15 Sapporo Women,,"15th Jun 2026,22:00 EDT",Kim Eunchae,Kawagishi N.,1.600,2.196,"2:0(6:4, 6:3)",81.88%,69%,69.0,31%,
+Tennis,"Paraguay CHALLENGER MEN - SINGLES: Asuncion 2, clay",,"15th Jun 2026,17:10 EDT",Ribeiro E.,Rodriguez L. J.,1.440,2.630,"2:0(6:4, 6:4)",83.91%,68.8%,68.8,31.2%,
+Tennis,ITF W15 Kursumlijska Banja 5 Women,,"15th Jun 2026,03:52 EDT",Antici A.,Yemshanova M.,1.620,2.200,"2:0(7:5, 6:1)",65.69%,68.6%,68.6,31.4%,"1:2(6:2, 3:6, 3:10)"
+Tennis,"Italy CHALLENGER MEN - SINGLES: Parma, clay",,"15th Jun 2026,10:50 EDT",van Assche L.,Sanchez Izquierdo N.,1.600,2.196,"2:0(6:4, 6:4)",59.17%,68.6%,68.6,31.4%,"0:0(5:3, 6:1, 4:6)"
+Tennis,ITF W50 Haskovo Women,,"15th Jun 2026,03:10 EDT",Krastenova G.,Spasova B.,1.680,2.060,"2:0(6:2, 6:2)",67.12%,68.5%,68.5,31.5%,"1:2(2:6, 6:3, 4:6)"
+Tennis,ITF W15 Sapporo Women,,"15th Jun 2026,22:00 EDT",Das A.,Kanemaki C.,1.112,5.300,"2:0(6:3, 6:1)",45.6%,68.3%,68.3,31.7%,
+Tennis,"Italy CHALLENGER WOMEN - SINGLES: Brescia, clay",,"15th Jun 2026,11:20 EDT",Mayar Sherif,Raluca Serban,1.100,6.500,"2:0(6:4, 6:4)",62.31%,68.3%,68.3,31.7%,0:0(4:1)
+Tennis,ITF W35 Mohammedia Women,,"15th Jun 2026,07:47 EDT",Ait el Bachir W.,Mikhailova M.,1.360,3.000,"2:0(6:2, 6:4)",58.24%,68.2%,68.2,31.8%,"2:0(6:3, 6:3)"
+Tennis,ITF M15 Mungia-Laukariz Men,,"15th Jun 2026,06:12 EDT",Chambonniere Matthieu,Rocens M.,1.200,4.330,"2:0(6:3, 7:4)",86.26%,67.6%,67.6,32.4%,"2:0(6:3, 7:6)"
+Tennis,"Poland CHALLENGER MEN - SINGLES: Poznan - Qualification, clay",,"15th Jun 2026,06:30 EDT",Karol M.,Castelnuovo L.,1.220,4.000,"2:0(6:4, 6:4)",57.22%,67.4%,67.4,32.6%,"2:1(3:6, 6:2, 6:3)"
+Tennis,ITF W15 Kursumlijska Banja 5 Women,,"15th Jun 2026,02:37 EDT",Drame P.,Remander S.,1.840,1.840,"2:0(6:3, 6:2)",61.67%,67.3%,67.3,32.7%,"2:0(6:1, 6:1)"
+Tennis,"France CHALLENGER MEN - SINGLES: Royan, clay",,"15th Jun 2026,11:50 EDT",Gulin S.,Delage P.,1.270,3.410,"2:0(7:5, 6:4)",89.23%,67%,67.0,33%,
+Tennis,"Italy CHALLENGER MEN - SINGLES: Parma, clay",,"15th Jun 2026,11:25 EDT",Stefano Napolitano,Franco Agamenone,1.860,1.820,"2:1(5:7, 7:5, 6:3)",62.94%,60%,60.0,40%,0:0(1:2)
+Tennis,"Paraguay CHALLENGER MEN - SINGLES: Asuncion 2, clay",,"15th Jun 2026,17:00 EDT",Gomez J. S.,Zarate C. M.,3.645,1.240,"2:1(6:4, 4:6, 7:5)",81.68%,60%,60.0,40%,

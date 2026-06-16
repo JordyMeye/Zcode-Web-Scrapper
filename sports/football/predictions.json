@@ -1,0 +1,54 @@
+{
+  "status": "success",
+  "sport": "Football",
+  "scrape_time": "2026-06-16T10:02:56.127469",
+  "source": "https://zcodesystem.com/scorespredictor/?hop=sportsmart",
+  "filter": {
+    "min_confidence": "60%"
+  },
+  "summary": {
+    "total_predictions": 2,
+    "leagues_covered": 1,
+    "breakdown": {
+      "World Championship 2026": 2
+    },
+    "high_value_count": 0
+  },
+  "high_value_predictions": [],
+  "predictions_by_league": {
+    "World Championship 2026": [
+      {
+        "sport": "Football",
+        "league": "World Championship 2026",
+        "date_time": "16th Jun 2026,21:00 EDT",
+        "team1": "Algeria",
+        "team2": "Argentina",
+        "odds_team1": "9.000",
+        "odds_team2": "1.456",
+        "score_first_half": "0:1",
+        "score_final": "1:2",
+        "confidence": "68.5%",
+        "confidence_value": 68.5,
+        "prob_team1_win": "31.29%",
+        "prob_draw": "32.2%",
+        "prob_team2_win": "36.51%"
+      },
+      {
+        "sport": "Football",
+        "league": "World Championship 2026",
+        "date_time": "16th Jun 2026,15:00 EDT",
+        "team1": "Senegal",
+        "team2": "France",
+        "odds_team1": "6.920",
+        "odds_team2": "1.536",
+        "score_first_half": "1:0",
+        "score_final": "1:2",
+        "confidence": "67.4%",
+        "confidence_value": 67.4,
+        "prob_team1_win": "29.83%",
+        "prob_draw": "34.08%",
+        "prob_team2_win": "36.1%"
+      }
+    ]
+  }
+}
