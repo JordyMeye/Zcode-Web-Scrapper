@@ -3,421 +3,332 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Z Code Predictions Dashboard</title>
+  <title>ISALYS BET</title>
   <style>
     :root {
-      --bg: #0f1117;
+      --bg:      #0d1117;
       --sidebar: #161b27;
-      --card: #1c2333;
-      --border: #2a3248;
-      --accent: #22c55e;
-      --accent2: #3b82f6;
-      --warn: #f59e0b;
-      --danger: #ef4444;
-      --text: #e2e8f0;
-      --muted: #8892a4;
-      --radius: 10px;
+      --card:    #1c2333;
+      --border:  #2a3248;
+      --accent:  #22c55e;
+      --tennis:  #f97316;
+      --blue:    #3b82f6;
+      --warn:    #f59e0b;
+      --danger:  #ef4444;
+      --text:    #e2e8f0;
+      --muted:   #8892a4;
+      --radius:  10px;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Segoe UI', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      display: flex;
-      min-height: 100vh;
+      background: var(--bg); color: var(--text);
+      display: flex; min-height: 100vh;
     }
 
-    /* ── SIDEBAR ── */
+    /* ════════════ SIDEBAR ════════════ */
     #sidebar {
-      width: 280px;
-      min-width: 280px;
+      width: 280px; min-width: 280px;
       background: var(--sidebar);
       border-right: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      padding: 20px 16px;
-      position: sticky;
-      top: 0;
-      height: 100vh;
+      display: flex; flex-direction: column;
+      padding: 0;
+      position: sticky; top: 0; height: 100vh;
       overflow-y: auto;
     }
 
-    #sidebar h1 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 0.5px;
-      margin-bottom: 4px;
+    /* Brand */
+    .brand {
+      padding: 20px 18px 14px;
+      border-bottom: 1px solid var(--border);
     }
-
-    #sidebar .subtitle {
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 24px;
-    }
-
-    .stat-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 10px 12px;
-    }
-
-    .stat-box .val {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .stat-box .lbl {
-      font-size: 0.68rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .section-title {
-      font-size: 0.7rem;
-      text-transform: uppercase;
+    .brand h1 {
+      font-size: 1.25rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--blue) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       letter-spacing: 1px;
+    }
+    .brand p { font-size: .68rem; color: var(--muted); margin-top: 2px; }
+
+    /* Sport tabs in sidebar */
+    .sport-nav {
+      display: flex; gap: 6px;
+      padding: 14px 18px 0;
+    }
+    .sport-btn {
+      flex: 1; padding: 7px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--card);
       color: var(--muted);
-      margin-bottom: 8px;
-      margin-top: 16px;
+      font-size: .75rem; font-weight: 600;
+      cursor: pointer; text-align: center;
+      transition: all .18s;
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+    }
+    .sport-btn .s-icon { font-size: 1.1rem; }
+    .sport-btn:hover { background: rgba(255,255,255,.05); color: var(--text); }
+    .sport-btn.active[data-sport="Football"] {
+      background: rgba(34,197,94,.15); border-color: var(--accent); color: var(--accent);
+    }
+    .sport-btn.active[data-sport="Tennis"] {
+      background: rgba(249,115,22,.15); border-color: var(--tennis); color: var(--tennis);
+    }
+    .sport-btn.active[data-sport="All"] {
+      background: rgba(59,130,246,.15); border-color: var(--blue); color: var(--blue);
     }
 
-    /* confidence slider */
-    #conf-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
+    /* Sidebar body (scrollable) */
+    .sidebar-body { flex: 1; overflow-y: auto; padding: 0 18px 20px; }
 
-    #conf-slider {
-      flex: 1;
-      accent-color: var(--accent);
+    /* Stats grid */
+    .section-title {
+      font-size: .65rem; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--muted); margin: 18px 0 8px;
     }
-
-    #conf-label {
-      font-size: 0.78rem;
-      color: var(--accent);
-      font-weight: 600;
-      min-width: 36px;
-      text-align: right;
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .stat-box {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 10px 12px;
     }
+    .stat-box .val { font-size: 1.35rem; font-weight: 700; }
+    .stat-box .lbl { font-size: .62rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-top: 1px; }
+    .stat-accent .val { color: var(--accent); }
+    .stat-tennis  .val { color: var(--tennis); }
+    .stat-blue    .val { color: var(--blue); }
+    .stat-warn    .val { color: var(--warn); }
 
-    /* search */
+    /* Search */
+    .search-wrap { position: relative; }
+    .search-wrap::before {
+      content: '⌕'; position: absolute; left: 9px; top: 50%; transform: translateY(-50%);
+      color: var(--muted); font-size: 1rem; pointer-events: none;
+    }
     #search {
-      width: 100%;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 7px 10px;
-      color: var(--text);
-      font-size: 0.82rem;
-      outline: none;
-      margin-bottom: 16px;
+      width: 100%; background: var(--card); border: 1px solid var(--border);
+      border-radius: 7px; padding: 7px 10px 7px 28px;
+      color: var(--text); font-size: .82rem; outline: none;
+    }
+    #search:focus { border-color: var(--blue); }
+    #search::placeholder { color: var(--muted); }
+
+    /* Date filter */
+    .date-range-wrap { display: flex; flex-direction: column; gap: 6px; }
+    .date-all-btn {
+      width: 100%; padding: 6px 10px;
+      background: rgba(59,130,246,.12); border: 1px solid var(--blue);
+      border-radius: 7px; color: var(--blue);
+      font-size: .78rem; font-weight: 600; cursor: pointer; text-align: left;
+      transition: background .14s;
+    }
+    .date-all-btn.inactive {
+      background: var(--card); border-color: var(--border); color: var(--muted); font-weight: 400;
+    }
+    .date-all-btn:hover { background: rgba(59,130,246,.18); }
+    #date-pick {
+      width: 100%; background: var(--card); border: 1px solid var(--border);
+      border-radius: 6px; padding: 6px 8px;
+      color: var(--text); font-size: .78rem; outline: none;
+      color-scheme: dark;
+    }
+    #date-pick:focus { border-color: var(--blue); }
+    #date-hint {
+      font-size: .64rem; color: var(--muted);
+      text-align: center; padding: 2px 0;
     }
 
-    #search:focus { border-color: var(--accent2); }
-
-    /* league list */
-    #league-list {
-      list-style: none;
-      flex: 1;
-      overflow-y: auto;
+    /* Odds row on cards */
+    .odds-row {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 7px; padding: 6px 10px;
+      font-size: .72rem;
     }
+    .odds-item { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+    .odds-item .o-lbl { font-size: .58rem; color: var(--muted); text-transform: uppercase; letter-spacing: .3px; }
+    .odds-item .o-val { font-weight: 700; color: var(--warn); font-size: .85rem; }
+    .odds-sep { color: var(--border); font-size: .9rem; }
 
+    /* Confidence */
+    #conf-wrap { display: flex; align-items: center; gap: 8px; }
+    #conf-slider { flex: 1; accent-color: var(--accent); }
+    #conf-label { font-size: .78rem; color: var(--accent); font-weight: 600; min-width: 36px; text-align: right; }
+
+    /* League / tournament list */
+    #league-list { list-style: none; }
     #league-list li {
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 0.78rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--muted);
-      transition: background 0.15s, color 0.15s;
+      padding: 6px 10px; border-radius: 6px; font-size: .78rem; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      color: var(--muted); transition: background .14s, color .14s;
+    }
+    #league-list li:hover, #league-list li.active {
+      background: rgba(34,197,94,.1); color: var(--text);
+    }
+    [data-sport-active="Tennis"] #league-list li:hover,
+    [data-sport-active="Tennis"] #league-list li.active {
+      background: rgba(249,115,22,.1);
+    }
+    .lg-name {
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 185px;
+    }
+    .lg-badge {
+      background: var(--border); border-radius: 20px;
+      padding: 1px 7px; font-size: .62rem; color: var(--muted); flex-shrink: 0;
+    }
+    #league-list li.active .lg-badge {
+      background: var(--accent); color: #000;
+    }
+    [data-sport-active="Tennis"] #league-list li.active .lg-badge {
+      background: var(--tennis);
     }
 
-    #league-list li:hover,
-    #league-list li.active {
-      background: rgba(34,197,94,.12);
-      color: var(--text);
-    }
-
-    #league-list li .badge {
-      background: var(--border);
-      border-radius: 20px;
-      padding: 1px 7px;
-      font-size: 0.65rem;
-      color: var(--muted);
-    }
-
-    #league-list li.active .badge {
-      background: var(--accent);
-      color: #000;
-    }
-
+    /* Scrape time */
     .scrape-time {
-      font-size: 0.65rem;
-      color: var(--muted);
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
+      font-size: .62rem; color: var(--muted);
+      padding: 12px 18px; border-top: 1px solid var(--border); margin-top: auto;
     }
 
-    /* ── MAIN ── */
-    #main {
-      flex: 1;
-      padding: 24px;
-      overflow-y: auto;
-    }
+    /* ════════════ MAIN PANEL ════════════ */
+    #main { flex: 1; display: flex; flex-direction: column; overflow-y: auto; }
 
-    #main-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
+    /* Top bar */
+    #topbar {
+      padding: 18px 24px 0;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px;
     }
-
-    #main-header h2 {
-      font-size: 1.2rem;
-      font-weight: 700;
+    .topbar-left { display: flex; align-items: center; gap: 12px; }
+    #active-sport-title {
+      font-size: 1.25rem; font-weight: 800; letter-spacing: .5px;
     }
+    #result-legend { display: flex; align-items: center; gap: 10px; }
+    .legend-item { display: flex; align-items: center; gap: 4px; font-size: .7rem; color: var(--muted); }
+    .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .legend-dot.success { background: var(--accent); }
+    .legend-dot.failed  { background: var(--danger); }
+    .legend-dot.pending { background: var(--muted); }
+    #count-label { font-size: .78rem; color: var(--muted); white-space: nowrap; }
 
-    #count-label {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    /* sport tabs */
-    #sport-tabs {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    .sport-tab {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 5px 14px;
-      font-size: 0.78rem;
-      cursor: pointer;
-      color: var(--muted);
-      transition: all 0.15s;
-    }
-
-    .sport-tab:hover, .sport-tab.active {
-      background: var(--accent);
-      color: #000;
-      border-color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* cards grid */
+    /* Cards area */
+    #cards-wrap { padding: 16px 24px 24px; flex: 1; }
     #cards {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
       gap: 16px;
     }
 
+    /* ── Single card ── */
     .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: border-color 0.2s, transform 0.15s;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 16px;
+      display: flex; flex-direction: column; gap: 11px;
+      transition: transform .15s, border-color .2s, box-shadow .2s;
+      position: relative;
     }
+    .card:hover { transform: translateY(-2px); border-color: var(--blue); }
 
-    .card:hover {
-      border-color: var(--accent2);
-      transform: translateY(-2px);
+    /* Result states */
+    .card.result-success {
+      border-color: rgba(34,197,94,.55);
+      background: linear-gradient(135deg, #1c2333 0%, rgba(34,197,94,.07) 100%);
+      box-shadow: 0 0 0 1px rgba(34,197,94,.2);
     }
+    .card.result-success:hover { border-color: var(--accent); }
+    .card.result-failed {
+      border-color: rgba(239,68,68,.55);
+      background: linear-gradient(135deg, #1c2333 0%, rgba(239,68,68,.07) 100%);
+      box-shadow: 0 0 0 1px rgba(239,68,68,.2);
+    }
+    .card.result-failed:hover { border-color: var(--danger); }
 
-    /* card top row */
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+    /* Card top row */
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; }
+    .card-top-left { display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1; }
+    .card-top-right { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
+
+    .sport-pill {
+      font-size: .58rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .5px; padding: 2px 7px; border-radius: 20px; flex-shrink: 0;
     }
+    .sport-pill.Football { background: rgba(34,197,94,.15); color: var(--accent); }
+    .sport-pill.Tennis   { background: rgba(249,115,22,.15); color: var(--tennis); }
 
     .league-badge {
-      font-size: 0.65rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--accent2);
-      background: rgba(59,130,246,.12);
-      padding: 3px 8px;
-      border-radius: 4px;
-      max-width: 180px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      font-size: .62rem; font-weight: 600; text-transform: uppercase; letter-spacing: .4px;
+      color: var(--blue); background: rgba(59,130,246,.1);
+      padding: 3px 8px; border-radius: 4px;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     }
+    .card[data-sport="Tennis"] .league-badge { color: var(--tennis); background: rgba(249,115,22,.1); }
 
     .conf-badge {
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 20px;
-      white-space: nowrap;
+      font-size: .7rem; font-weight: 700;
+      padding: 3px 9px; border-radius: 20px; white-space: nowrap;
     }
+    .conf-high { background: rgba(34,197,94,.15);  color: var(--accent); }
+    .conf-mid  { background: rgba(245,158,11,.15); color: var(--warn);   }
+    .conf-low  { background: rgba(59,130,246,.15); color: var(--blue);   }
 
-    .conf-high   { background: rgba(34,197,94,.15);  color: var(--accent); }
-    .conf-mid    { background: rgba(245,158,11,.15); color: var(--warn);   }
-    .conf-low    { background: rgba(59,130,246,.15); color: var(--accent2);}
-
-    /* match title */
-    .match-title {
-      text-align: center;
+    /* Result badge */
+    .result-badge {
+      font-size: .62rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap;
     }
+    .result-badge.success { background: rgba(34,197,94,.2);  color: var(--accent); }
+    .result-badge.failed  { background: rgba(239,68,68,.2);  color: var(--danger); }
+    .result-badge.pending { background: rgba(136,146,164,.1); color: var(--muted); font-weight: 400; }
 
-    .match-title .teams {
-      font-size: 1rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+    /* Match */
+    .match-title { text-align: center; }
+    .match-teams {
+      font-size: .95rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
     }
+    .vs { font-size: .68rem; color: var(--muted); font-weight: 400; }
+    .match-sub { font-size: .65rem; color: var(--muted); margin-top: 3px; }
 
-    .match-title .vs {
-      font-size: 0.7rem;
-      color: var(--muted);
-      font-weight: 400;
-    }
-
-    .match-title .datetime {
-      font-size: 0.68rem;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-
-    /* score block */
-    .scores {
-      display: flex;
-      gap: 10px;
-    }
-
-    .score-box {
-      flex: 1;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 8px;
-      text-align: center;
-    }
-
-    .score-box .lbl {
-      font-size: 0.6rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .score-box .val {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-top: 2px;
-    }
-
-    /* confidence bar */
-    .conf-bar-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .conf-bar-track {
-      flex: 1;
-      height: 6px;
-      background: var(--border);
-      border-radius: 3px;
-      overflow: hidden;
-    }
-
-    .conf-bar-fill {
-      height: 100%;
-      border-radius: 3px;
-      transition: width 0.4s ease;
-    }
-
-    .conf-bar-lbl {
-      font-size: 0.7rem;
-      color: var(--muted);
-      min-width: 60px;
-      text-align: right;
-    }
-
-    /* probability row */
-    .prob-row {
-      display: flex;
-      gap: 4px;
-    }
-
-    .prob-col {
-      flex: 1;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 6px 8px;
-      text-align: center;
-    }
-
-    .prob-col .p-lbl {
-      font-size: 0.58rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-
-    .prob-col .p-val {
-      font-size: 0.88rem;
-      font-weight: 700;
-      margin-top: 2px;
-    }
-
-    .prob-col.best {
-      border-color: var(--accent);
-      background: rgba(34,197,94,.06);
-    }
-
-    .prob-col.best .p-val { color: var(--accent); }
-
-    /* no results */
-    #no-results {
+    /* Actual result (if available) */
+    .actual-result {
+      text-align: center; font-size: .72rem;
+      padding: 4px 10px; border-radius: 6px;
       display: none;
-      text-align: center;
-      color: var(--muted);
-      margin-top: 60px;
-      font-size: 0.9rem;
     }
+    .actual-result.visible { display: block; }
+    .actual-result.success { background: rgba(34,197,94,.1); color: var(--accent); }
+    .actual-result.failed  { background: rgba(239,68,68,.1);  color: var(--danger); }
 
-    /* loading */
-    #loading {
-      text-align: center;
-      color: var(--muted);
-      margin-top: 80px;
-      font-size: 0.9rem;
+    /* Scores */
+    .scores { display: flex; gap: 8px; }
+    .score-box {
+      flex: 1; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 7px; padding: 7px 8px; text-align: center;
     }
+    .score-box .lbl { font-size: .58rem; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; }
+    .score-box .val { font-size: 1.05rem; font-weight: 700; margin-top: 2px; }
 
-    /* scrollbar */
+    /* Confidence bar */
+    .conf-bar-wrap { display: flex; align-items: center; gap: 8px; }
+    .conf-bar-track { flex: 1; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+    .conf-bar-fill  { height: 100%; border-radius: 3px; }
+    .conf-bar-lbl   { font-size: .65rem; color: var(--muted); min-width: 62px; text-align: right; }
+
+    /* Probabilities */
+    .prob-row { display: flex; gap: 4px; }
+    .prob-col {
+      flex: 1; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 6px; padding: 6px 5px; text-align: center;
+    }
+    .prob-col .p-lbl { font-size: .55rem; color: var(--muted); text-transform: uppercase; letter-spacing: .3px; }
+    .prob-col .p-val { font-size: .85rem; font-weight: 700; margin-top: 2px; }
+    .prob-col.best   { border-color: var(--accent); background: rgba(34,197,94,.06); }
+    .prob-col.best .p-val { color: var(--accent); }
+    .card[data-sport="Tennis"] .prob-col.best { border-color: var(--tennis); background: rgba(249,115,22,.06); }
+    .card[data-sport="Tennis"] .prob-col.best .p-val { color: var(--tennis); }
+
+    /* Empty / loading */
+    #no-results { display:none; text-align:center; color:var(--muted); padding: 60px 0; font-size: .9rem; }
+    #loading    { text-align:center; color:var(--muted); padding: 80px 0; font-size: .9rem; }
+
+    /* Scrollbar */
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
@@ -425,305 +336,521 @@
 </head>
 <body>
 
-<!-- LEFT SIDEBAR -->
-<aside id="sidebar">
-  <h1>Z Code Predictor</h1>
-  <p class="subtitle">Sports Predictions Dashboard</p>
+<!-- ══════════ LEFT SIDEBAR ══════════ -->
+<aside id="sidebar" data-sport-active="All">
 
-  <div class="stats-grid">
-    <div class="stat-box">
-      <div class="val" id="stat-total">–</div>
-      <div class="lbl">Predictions</div>
-    </div>
-    <div class="stat-box">
-      <div class="val" id="stat-leagues">–</div>
-      <div class="lbl">Leagues</div>
-    </div>
-    <div class="stat-box">
-      <div class="val" id="stat-avg">–</div>
-      <div class="lbl">Avg Conf.</div>
-    </div>
-    <div class="stat-box">
-      <div class="val" id="stat-high">–</div>
-      <div class="lbl">High (80%+)</div>
-    </div>
+  <!-- Brand -->
+  <div class="brand">
+    <h1>ISALYS BET</h1>
+    <p>Sports Predictions Dashboard</p>
   </div>
 
-  <div class="section-title">Search teams</div>
-  <input id="search" type="text" placeholder="e.g. Arsenal, Real Madrid…" autocomplete="off" />
-
-  <div class="section-title">Min confidence</div>
-  <div id="conf-wrap">
-    <input id="conf-slider" type="range" min="60" max="100" value="60" />
-    <span id="conf-label">60%</span>
+  <!-- Sport selector -->
+  <div class="sport-nav">
+    <button class="sport-btn active" data-sport="All"      onclick="setSport('All')">
+      <span class="s-icon">🏆</span><span>All</span>
+    </button>
+    <button class="sport-btn"        data-sport="Football" onclick="setSport('Football')">
+      <span class="s-icon">⚽</span><span>Football</span>
+    </button>
+    <button class="sport-btn"        data-sport="Tennis"   onclick="setSport('Tennis')">
+      <span class="s-icon">🎾</span><span>Tennis</span>
+    </button>
   </div>
 
-  <div class="section-title">Leagues</div>
-  <ul id="league-list"></ul>
+  <div class="sidebar-body">
+
+    <!-- Stats -->
+    <div class="section-title" id="stats-label">Overview</div>
+    <div class="stats-grid">
+      <div class="stat-box stat-accent"><div class="val" id="stat-total">–</div><div class="lbl">Predictions</div></div>
+      <div class="stat-box stat-blue">  <div class="val" id="stat-leagues">–</div><div class="lbl" id="stat-leagues-lbl">Leagues</div></div>
+      <div class="stat-box stat-warn">  <div class="val" id="stat-avg">–</div><div class="lbl">Avg Conf.</div></div>
+      <div class="stat-box stat-tennis"><div class="val" id="stat-high">–</div><div class="lbl">High 80%+</div></div>
+    </div>
+
+    <!-- Search -->
+    <div class="section-title">Search</div>
+    <div class="search-wrap">
+      <input id="search" type="text" placeholder="Teams, players, leagues…" autocomplete="off" />
+    </div>
+
+    <!-- Date filter -->
+    <div class="section-title">Date</div>
+    <div class="date-range-wrap">
+      <button class="date-all-btn" id="date-all-btn" onclick="clearDate()">All dates</button>
+      <input type="date" id="date-pick" onchange="applyDate()" />
+      <div id="date-hint"></div>
+    </div>
+
+    <!-- Match confidence -->
+    <div class="section-title">Min match confidence</div>
+    <div id="conf-wrap">
+      <input id="conf-slider" type="range" min="60" max="100" value="60" />
+      <span id="conf-label">60%</span>
+    </div>
+
+    <!-- Team win probability -->
+    <div class="section-title">Min team win probability</div>
+    <div id="conf-wrap">
+      <input id="team-conf-slider" type="range" min="0" max="100" value="0" />
+      <span id="team-conf-label">Off</span>
+    </div>
+    <div style="font-size:.62rem;color:var(--muted);margin-top:4px">
+      Favourite must have ≥ this % to win
+    </div>
+
+    <!-- League / Tournament list -->
+    <div class="section-title" id="league-section-title">Leagues</div>
+    <ul id="league-list"></ul>
+
+  </div><!-- .sidebar-body -->
 
   <p class="scrape-time" id="scrape-time"></p>
 </aside>
 
-<!-- MAIN PANEL -->
+<!-- ══════════ MAIN PANEL ══════════ -->
 <main id="main">
-  <div id="main-header">
-    <h2>Predictions</h2>
+
+  <div id="topbar">
+    <div class="topbar-left">
+      <span id="active-sport-title">All Predictions</span>
+      <div id="result-legend">
+        <span class="legend-item"><span class="legend-dot success"></span>Correct</span>
+        <span class="legend-item"><span class="legend-dot failed"></span>Failed</span>
+        <span class="legend-item"><span class="legend-dot pending"></span>Pending</span>
+      </div>
+    </div>
     <span id="count-label"></span>
   </div>
 
-  <div id="sport-tabs"></div>
+  <div id="cards-wrap">
+    <div id="loading">Loading predictions…</div>
+    <div id="cards"></div>
+    <div id="no-results">
+      <div id="no-results-msg">No predictions match your current filters.</div>
+      <div id="no-results-hint" style="font-size:.78rem;margin-top:8px;display:none"></div>
+    </div>
+  </div>
 
-  <div id="loading">Loading predictions…</div>
-  <div id="cards"></div>
-  <div id="no-results">No predictions match your filters.</div>
 </main>
 
 <script>
-  let allPredictions = [];
-  let activeSport = 'All';
-  let activeLeague = 'All';
-  let minConf = 60;
-  let searchQuery = '';
+// ══ Config ═════════════════════════════════════════════════════════════════
+const SOURCES = [
+  { sport: 'Football', file: 'sports/football/predictions.json' },
+  { sport: 'Tennis',   file: 'sports/tennis/predictions.json'   },
+  { sport: null,       file: 'high_confidence_predictions.json' }, // legacy fallback
+];
 
-  // ── Load data ──────────────────────────────────────────────────────────────
-  async function loadData() {
-    let data;
+const SPORT_META = {
+  Football: { icon: '⚽', color: 'var(--accent)',  leagueLabel: 'Leagues'     },
+  Tennis:   { icon: '🎾', color: 'var(--tennis)',  leagueLabel: 'Tournaments' },
+};
 
-    // Try predictions_by_sport first (full dataset), fallback to high_value_predictions
+// ══ State ══════════════════════════════════════════════════════════════════
+let allPredictions = [];
+let activeSport    = 'All';
+let activeLeague   = 'All';
+let minConf        = 60;
+let minTeamConf    = 0;      // min win probability for the strongest team; 0 = off
+let searchQuery    = '';
+let activeDate     = null;   // Date object for the selected day, or null = all
+
+// ══ Load ═══════════════════════════════════════════════════════════════════
+async function loadData() {
+  const seen = new Set();
+  let latestTime = null;
+
+  for (const src of SOURCES) {
     try {
-      const res = await fetch('./high_confidence_predictions.json');
-      data = await res.json();
-    } catch (e) {
-      document.getElementById('loading').textContent = 'Error loading predictions. Serve via HTTP server.';
-      return;
-    }
+      const res  = await fetch(src.file);
+      if (!res.ok) continue;
+      const data = await res.json();
 
-    // Collect all predictions from both possible structures
-    let preds = [];
+      if (data.scrape_time) {
+        const t = new Date(data.scrape_time);
+        if (!latestTime || t > latestTime) latestTime = t;
+      }
 
-    if (data.predictions_by_sport) {
-      Object.values(data.predictions_by_sport).forEach(sportPreds => {
-        preds = preds.concat(sportPreds);
+      let raws = [];
+      const bySection = data.predictions_by_sport || data.predictions_by_league || data.predictions_by_tournament;
+      if (bySection) Object.values(bySection).forEach(list => (raws = raws.concat(list)));
+      if (data.high_value_predictions) {
+        data.high_value_predictions.forEach(p => {
+          if (!raws.some(r => pKey(r) === pKey(p))) raws.push(p);
+        });
+      }
+
+      raws.forEach(raw => {
+        const norm = normalise(raw, src.sport);
+        const k    = pKey(norm);
+        if (!seen.has(k)) { seen.add(k); allPredictions.push(norm); }
       });
-    }
-
-    if (data.high_value_predictions && data.high_value_predictions.length) {
-      // Merge, deduplicating by team1+team2+date_time
-      const seen = new Set(preds.map(p => key(p)));
-      data.high_value_predictions.forEach(p => {
-        if (!seen.has(key(p))) {
-          seen.add(key(p));
-          preds.push(p);
-        }
-      });
-    }
-
-    allPredictions = preds;
-
-    // Populate scrape time
-    if (data.scrape_time) {
-      const d = new Date(data.scrape_time);
-      document.getElementById('scrape-time').textContent =
-        'Updated: ' + d.toLocaleString();
-    }
-
-    buildUI();
+    } catch (_) {}
   }
 
-  function key(p) {
-    return (p.team1 || '') + '|' + (p.team2 || '') + '|' + (p.date_time || '') + '|' + (p.league || '');
+  document.getElementById('loading').style.display = 'none';
+
+  if (allPredictions.length === 0) {
+    document.getElementById('loading').textContent =
+      'No data found. Run the scrapers then refresh. Serve via: python serve.py';
+    document.getElementById('loading').style.display = 'block';
+    return;
   }
 
-  // ── Build sidebar & render ─────────────────────────────────────────────────
-  function buildUI() {
-    document.getElementById('loading').style.display = 'none';
-
-    // Unique sports
-    const sports = ['All', ...new Set(allPredictions.map(p => p.sport || 'Football').filter(Boolean))];
-    const tabsEl = document.getElementById('sport-tabs');
-    tabsEl.innerHTML = '';
-    sports.forEach(s => {
-      const btn = document.createElement('button');
-      btn.className = 'sport-tab' + (s === activeSport ? ' active' : '');
-      btn.textContent = s;
-      btn.onclick = () => { activeSport = s; activeLeague = 'All'; buildUI(); };
-      tabsEl.appendChild(btn);
-    });
-
-    // Filtered by sport for league list
-    const sportFiltered = allPredictions.filter(p =>
-      activeSport === 'All' || (p.sport || 'Football') === activeSport
-    );
-
-    // Unique leagues
-    const leagueCounts = {};
-    sportFiltered.forEach(p => {
-      const lg = p.league || 'Unknown';
-      leagueCounts[lg] = (leagueCounts[lg] || 0) + 1;
-    });
-
-    const leagueListEl = document.getElementById('league-list');
-    leagueListEl.innerHTML = '';
-
-    const allLi = document.createElement('li');
-    allLi.className = activeLeague === 'All' ? 'active' : '';
-    allLi.innerHTML = '<span>All Leagues</span><span class="badge">' + sportFiltered.length + '</span>';
-    allLi.onclick = () => { activeLeague = 'All'; render(); buildLeagueList(leagueCounts); };
-    leagueListEl.appendChild(allLi);
-
-    Object.entries(leagueCounts)
-      .sort((a, b) => b[1] - a[1])
-      .forEach(([lg, cnt]) => {
-        const li = document.createElement('li');
-        li.className = activeLeague === lg ? 'active' : '';
-        li.innerHTML = '<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px">' + escHtml(lg) + '</span><span class="badge">' + cnt + '</span>';
-        li.onclick = () => { activeLeague = lg; render(); buildLeagueList(leagueCounts); };
-        leagueListEl.appendChild(li);
-      });
-
-    render();
+  if (latestTime) {
+    document.getElementById('scrape-time').textContent = 'Updated: ' + latestTime.toLocaleString();
   }
 
-  function buildLeagueList(leagueCounts) {
-    // Just refresh active states
-    const items = document.querySelectorAll('#league-list li');
-    items.forEach((li, i) => {
-      if (i === 0) li.className = activeLeague === 'All' ? 'active' : '';
-      // others handled by onclick
-    });
-  }
+  updateDateHint();
 
-  function render() {
-    const filtered = allPredictions.filter(p => {
-      const sport = p.sport || 'Football';
-      const league = p.league || 'Unknown';
-      const conf = p.confidence_value || 0;
-      const teamText = ((p.team1 || '') + ' ' + (p.team2 || '')).toLowerCase();
+  // Default to today so old scraped data doesn't flood the view on load
+  const todayISO = toISO(new Date());
+  document.getElementById('date-pick').value = todayISO;
+  activeDate = new Date(todayISO);
+  document.getElementById('date-all-btn').classList.add('inactive');
 
-      return (activeSport === 'All' || sport === activeSport) &&
-             (activeLeague === 'All' || league === activeLeague) &&
-             conf >= minConf &&
-             (searchQuery === '' || teamText.includes(searchQuery.toLowerCase()));
-    });
+  buildLeagueList();
+  updateStats();
+  render();
+}
 
-    // Sort by confidence desc
-    filtered.sort((a, b) => (b.confidence_value || 0) - (a.confidence_value || 0));
+function pKey(p) {
+  return (p.name1||p.team1||p.player1||'')+'|'+(p.name2||p.team2||p.player2||'')+'|'+(p.date_time||'')+'|'+(p.league||p.tournament||'');
+}
 
-    // Stats
-    const total = allPredictions.length;
-    const leagues = new Set(allPredictions.map(p => p.league || 'Unknown')).size;
-    const avg = allPredictions.length
-      ? (allPredictions.reduce((s, p) => s + (p.confidence_value || 0), 0) / allPredictions.length).toFixed(1) + '%'
-      : '–';
-    const high = allPredictions.filter(p => (p.confidence_value || 0) >= 80).length;
+// ══ Normalise any prediction shape into a unified object ═══════════════════
+function normalise(raw, forceSport) {
+  const sport    = raw.sport || forceSport || 'Football';
+  const isTennis = sport === 'Tennis';
+  return {
+    sport,
+    league:     raw.league || raw.tournament || 'Unknown',
+    round:      raw.round  || '',
+    date_time:  raw.date_time  || '',
+    name1:      raw.team1    || raw.player1   || '?',
+    name2:      raw.team2    || raw.player2   || '?',
+    odds1:      raw.odds_team1   || raw.odds_player1 || '',
+    odds2:      raw.odds_team2   || raw.odds_player2 || '',
+    score1_lbl: isTennis ? '1st Set'  : '1st Half',
+    score2_lbl: isTennis ? 'Sets'     : 'Full Time',
+    score1:     raw.set_prediction || raw.score_first_half || '–',
+    score2:     raw.match_score    || raw.score_final      || '–',
+    confidence:       raw.confidence       || '–',
+    confidence_value: raw.confidence_value || 0,
+    prob1:     raw.prob_player1_win || raw.prob_team1_win || 'N/A',
+    prob_draw: isTennis ? null : (raw.prob_draw || 'N/A'),
+    prob2:     raw.prob_player2_win || raw.prob_team2_win || 'N/A',
+    result:         raw.result          || null,
+    actual_score:   raw.actual_score    || null,
+    actual_winner:  raw.actual_winner   || null,
+  };
+}
 
-    document.getElementById('stat-total').textContent = total;
-    document.getElementById('stat-leagues').textContent = leagues;
-    document.getElementById('stat-avg').textContent = avg;
-    document.getElementById('stat-high').textContent = high;
-    document.getElementById('count-label').textContent = filtered.length + ' shown';
+// ══ Sport selector ══════════════════════════════════════════════════════════
+function setSport(sport) {
+  activeSport  = sport;
+  activeLeague = 'All';
 
-    const cardsEl = document.getElementById('cards');
-    const noEl = document.getElementById('no-results');
+  // Sidebar active state
+  document.querySelectorAll('.sport-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.sport === sport);
+  });
+  document.getElementById('sidebar').dataset.sportActive = sport;
 
-    if (filtered.length === 0) {
-      cardsEl.innerHTML = '';
-      noEl.style.display = 'block';
-      return;
+  // Update league section label
+  const label = sport !== 'All' && SPORT_META[sport]
+    ? SPORT_META[sport].leagueLabel
+    : 'Leagues / Tournaments';
+  document.getElementById('league-section-title').textContent = label;
+
+  // Update stats label
+  document.getElementById('stats-label').textContent =
+    sport === 'All' ? 'Overview' : sport + ' Overview';
+  document.getElementById('stat-leagues-lbl').textContent =
+    sport === 'Tennis' ? 'Tournaments' : 'Leagues';
+
+  // Title on main panel
+  const titles = { All: '🏆 All Predictions', Football: '⚽ Football', Tennis: '🎾 Tennis' };
+  document.getElementById('active-sport-title').textContent = titles[sport] || sport;
+
+  buildLeagueList();
+  updateStats();
+  render();
+}
+
+// ══ Date helpers ════════════════════════════════════════════════════════════
+function parsePredDate(dt) {
+  if (!dt) return null;
+  const m = dt.match(/(\d{1,2})(?:st|nd|rd|th)\s+(\w+)\s+(\d{4})/i);
+  if (!m) return null;
+  try { const d = new Date(`${m[2]} ${m[1]}, ${m[3]}`); return isNaN(d) ? null : d; }
+  catch (_) { return null; }
+}
+function toISO(d) {
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function fmtDate(d) {
+  return d.toLocaleDateString(undefined, {day:'numeric', month:'short', year:'numeric'});
+}
+
+function clearDate() {
+  activeDate = null;
+  document.getElementById('date-pick').value = '';
+  document.getElementById('date-all-btn').classList.remove('inactive');
+  render();
+}
+function applyDate() {
+  const v = document.getElementById('date-pick').value;
+  activeDate = v ? new Date(v) : null;
+  document.getElementById('date-all-btn').classList.toggle('inactive', !!activeDate);
+  render();
+}
+function updateDateHint() {
+  const dates = allPredictions.map(p => parsePredDate(p.date_time)).filter(Boolean);
+  if (!dates.length) return;
+  const min = dates.reduce((a,b) => a<b?a:b);
+  const max = dates.reduce((a,b) => a>b?a:b);
+  document.getElementById('date-hint').textContent =
+    'Data: ' + fmtDate(min) + ' – ' + fmtDate(max);
+}
+
+// ══ League list ═════════════════════════════════════════════════════════════
+function buildLeagueList() {
+  const pool = activeSport === 'All'
+    ? allPredictions
+    : allPredictions.filter(p => p.sport === activeSport);
+
+  const counts = {};
+  pool.forEach(p => { counts[p.league] = (counts[p.league]||0)+1; });
+
+  const el = document.getElementById('league-list');
+  el.innerHTML = '';
+
+  const mkLi = (label, key, count) => {
+    const li = document.createElement('li');
+    li.className = activeLeague === key ? 'active' : '';
+    li.innerHTML = `<span class="lg-name">${esc(label)}</span><span class="lg-badge">${count}</span>`;
+    li.onclick   = () => { activeLeague = key; buildLeagueList(); render(); };
+    el.appendChild(li);
+  };
+  mkLi('All', 'All', pool.length);
+  Object.entries(counts).sort((a,b)=>b[1]-a[1]).forEach(([lg,c]) => mkLi(lg, lg, c));
+}
+
+// ══ Stats ═══════════════════════════════════════════════════════════════════
+function updateStats() {
+  const pool = activeSport === 'All'
+    ? allPredictions
+    : allPredictions.filter(p => p.sport === activeSport);
+
+  const leagues = new Set(pool.map(p => p.league)).size;
+  const avg     = pool.length
+    ? (pool.reduce((s,p)=>s+p.confidence_value,0)/pool.length).toFixed(1)+'%' : '–';
+  const high    = pool.filter(p=>p.confidence_value>=80).length;
+
+  document.getElementById('stat-total').textContent   = pool.length;
+  document.getElementById('stat-leagues').textContent = leagues;
+  document.getElementById('stat-avg').textContent     = avg;
+  document.getElementById('stat-high').textContent    = high;
+}
+
+// ══ Render cards ═══════════════════════════════════════════════════════════
+function render() {
+  const filtered = allPredictions.filter(p => {
+    if (activeSport  !== 'All' && p.sport  !== activeSport)  return false;
+    if (activeLeague !== 'All' && p.league !== activeLeague) return false;
+    if (p.confidence_value < minConf) return false;
+    // Team win probability filter — at least one team must meet the threshold
+    if (minTeamConf > 0) {
+      const best = Math.max(toNum(p.prob1), toNum(p.prob2));
+      if (best < minTeamConf) return false;
     }
+    if (searchQuery) {
+      const txt = (p.name1+' '+p.name2+' '+p.league).toLowerCase();
+      if (!txt.includes(searchQuery.toLowerCase())) return false;
+    }
+    // Date filter — exact day match
+    if (activeDate) {
+      const pd = parsePredDate(p.date_time);
+      if (!pd) return false;
+      if (pd.getFullYear() !== activeDate.getFullYear() ||
+          pd.getMonth()    !== activeDate.getMonth()    ||
+          pd.getDate()     !== activeDate.getDate()) return false;
+    }
+    return true;
+  }).sort((a,b) => b.confidence_value - a.confidence_value);
 
-    noEl.style.display = 'none';
+  document.getElementById('count-label').textContent = filtered.length + ' predictions';
+
+  const cardsEl  = document.getElementById('cards');
+  const noEl     = document.getElementById('no-results');
+  const hintEl   = document.getElementById('no-results-hint');
+  const msgEl    = document.getElementById('no-results-msg');
+
+  if (filtered.length === 0) {
     cardsEl.innerHTML = '';
+    noEl.style.display = 'block';
+    // Show a helpful hint when filtering by today and nothing found
+    if (activeDate) {
+      const today = new Date();
+      const isToday = activeDate.getFullYear() === today.getFullYear() &&
+                      activeDate.getMonth()    === today.getMonth()    &&
+                      activeDate.getDate()     === today.getDate();
+      if (isToday) {
+        msgEl.textContent   = "No predictions for today yet.";
+        hintEl.textContent  = "Run  python run_all.py  to scrape today's games, then refresh the page.";
+        hintEl.style.display = 'block';
+      } else {
+        msgEl.textContent   = 'No predictions for ' + fmtDate(activeDate) + '.';
+        hintEl.style.display = 'none';
+      }
+    } else {
+      msgEl.textContent   = 'No predictions match your current filters.';
+      hintEl.style.display = 'none';
+    }
+    return;
+  }
+  noEl.style.display  = 'none';
+  hintEl.style.display = 'none';
+  cardsEl.innerHTML  = '';
+  filtered.forEach(p => cardsEl.appendChild(buildCard(p)));
+}
 
-    filtered.forEach(p => {
-      cardsEl.appendChild(buildCard(p));
-    });
+// ══ Build one card ══════════════════════════════════════════════════════════
+function buildCard(p) {
+  const conf      = p.confidence_value;
+  const confClass = conf >= 80 ? 'conf-high' : conf >= 70 ? 'conf-mid' : 'conf-low';
+  const barColor  = conf >= 80 ? 'var(--accent)' : conf >= 70 ? 'var(--warn)' : 'var(--blue)';
+
+  // Probabilities
+  const v1 = toNum(p.prob1);
+  const vd = p.prob_draw !== null ? toNum(p.prob_draw) : null;
+  const v2 = toNum(p.prob2);
+
+  const vals   = vd !== null ? [v1, vd, v2] : [v1, v2];
+  const names  = vd !== null
+    ? [truncate(p.name1,14), 'Draw', truncate(p.name2,14)]
+    : [truncate(p.name1,18), truncate(p.name2,18)];
+  const pcts   = vals.map(v => v.toFixed(1)+'%');
+  const best   = vals.indexOf(Math.max(...vals));
+
+  // Sub info
+  const sub = [p.round, p.date_time].filter(Boolean).join(' · ');
+
+  // Result badge
+  let resultBadge = '';
+  if (p.result === 'success') resultBadge = `<span class="result-badge success">✓ Correct</span>`;
+  else if (p.result === 'failed') resultBadge = `<span class="result-badge failed">✗ Failed</span>`;
+  else resultBadge = `<span class="result-badge pending">⏳ Pending</span>`;
+
+  // Actual result row
+  let actualRow = '';
+  if (p.actual_score) {
+    const cls  = p.result === 'success' ? 'success' : 'failed';
+    const msg  = p.result === 'success'
+      ? `✓ Predicted correctly — actual: ${esc(p.actual_score)}`
+      : `✗ Actual result: ${esc(p.actual_score)} — prediction was off`;
+    actualRow = `<div class="actual-result visible ${cls}">${msg}</div>`;
   }
 
-  function buildCard(p) {
-    const conf = p.confidence_value || 0;
-    const confClass = conf >= 80 ? 'conf-high' : conf >= 70 ? 'conf-mid' : 'conf-low';
-    const barColor = conf >= 80 ? 'var(--accent)' : conf >= 70 ? 'var(--warn)' : 'var(--accent2)';
+  const card = document.createElement('div');
+  card.className    = 'card' + (p.result ? ' result-'+p.result : '');
+  card.dataset.sport = p.sport;
 
-    const t1 = parseFloat((p.prob_team1_win || '0').replace('%', '')) || 0;
-    const dr = parseFloat((p.prob_draw || '0').replace('%', ''))      || 0;
-    const t2 = parseFloat((p.prob_team2_win || '0').replace('%', '')) || 0;
-    const bestIdx = [t1, dr, t2].indexOf(Math.max(t1, dr, t2));
-
-    const probLabels = [escHtml(p.team1 || 'Team 1'), 'Draw', escHtml(p.team2 || 'Team 2')];
-    const probVals   = [t1.toFixed(1) + '%', dr.toFixed(1) + '%', t2.toFixed(1) + '%'];
-
-    const league = p.league || p.sport || 'Unknown';
-    const datetime = p.date_time || '';
-
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      <div class="card-top">
-        <span class="league-badge" title="${escHtml(league)}">${escHtml(league)}</span>
-        <span class="conf-badge ${confClass}">${escHtml(p.confidence || conf + '%')}</span>
+  card.innerHTML = `
+    <div class="card-top">
+      <div class="card-top-left">
+        <span class="sport-pill ${esc(p.sport)}">${esc(p.sport)}</span>
+        <span class="league-badge" title="${esc(p.league)}">${esc(p.league)}</span>
       </div>
+      <div class="card-top-right">
+        ${resultBadge}
+        <span class="conf-badge ${confClass}">${esc(p.confidence)}</span>
+      </div>
+    </div>
 
-      <div class="match-title">
-        <div class="teams">
-          <span>${escHtml(p.team1 || '?')}</span>
-          <span class="vs">vs</span>
-          <span>${escHtml(p.team2 || '?')}</span>
+    <div class="match-title">
+      <div class="match-teams">
+        <span>${esc(p.name1)}</span>
+        <span class="vs">vs</span>
+        <span>${esc(p.name2)}</span>
+      </div>
+      ${sub ? `<div class="match-sub">${esc(sub)}</div>` : ''}
+    </div>
+
+    ${actualRow}
+
+    ${(p.odds1 || p.odds2) ? `
+    <div class="odds-row">
+      <div class="odds-item">
+        <span class="o-lbl">${esc(truncate(p.name1,14))}</span>
+        <span class="o-val">${p.odds1 ? esc(p.odds1) : '–'}</span>
+      </div>
+      <span class="odds-sep">vs</span>
+      <div class="odds-item">
+        <span class="o-lbl">${esc(truncate(p.name2,14))}</span>
+        <span class="o-val">${p.odds2 ? esc(p.odds2) : '–'}</span>
+      </div>
+    </div>` : ''}
+
+    <div class="scores">
+      <div class="score-box">
+        <div class="lbl">${esc(p.score1_lbl)}</div>
+        <div class="val">${esc(p.score1)}</div>
+      </div>
+      <div class="score-box">
+        <div class="lbl">${esc(p.score2_lbl)}</div>
+        <div class="val">${esc(p.score2)}</div>
+      </div>
+    </div>
+
+    <div class="conf-bar-wrap">
+      <div class="conf-bar-track">
+        <div class="conf-bar-fill" style="width:${conf}%;background:${barColor}"></div>
+      </div>
+      <span class="conf-bar-lbl">Confidence</span>
+    </div>
+
+    <div class="prob-row">
+      ${vals.map((_,i) => `
+        <div class="prob-col${i===best?' best':''}">
+          <div class="p-lbl">${names[i]}</div>
+          <div class="p-val">${pcts[i]}</div>
         </div>
-        ${datetime ? `<div class="datetime">${escHtml(datetime)}</div>` : ''}
-      </div>
+      `).join('')}
+    </div>
+  `;
+  return card;
+}
 
-      <div class="scores">
-        <div class="score-box">
-          <div class="lbl">1st Half</div>
-          <div class="val">${escHtml(p.score_first_half || '–')}</div>
-        </div>
-        <div class="score-box">
-          <div class="lbl">Full Time</div>
-          <div class="val">${escHtml(p.score_final || '–')}</div>
-        </div>
-      </div>
+// ══ Helpers ═════════════════════════════════════════════════════════════════
+function toNum(s) { return parseFloat(String(s??'0').replace('%','')) || 0; }
+function truncate(s, n) { s=String(s??''); return s.length>n ? s.slice(0,n)+'…' : s; }
+function esc(s) {
+  return String(s??'')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
 
-      <div class="conf-bar-wrap">
-        <div class="conf-bar-track">
-          <div class="conf-bar-fill" style="width:${conf}%;background:${barColor}"></div>
-        </div>
-        <span class="conf-bar-lbl">Confidence</span>
-      </div>
+// ══ Event listeners ══════════════════════════════════════════════════════════
+document.getElementById('conf-slider').addEventListener('input', e => {
+  minConf = +e.target.value;
+  document.getElementById('conf-label').textContent = minConf + '%';
+  render();
+});
+document.getElementById('team-conf-slider').addEventListener('input', e => {
+  minTeamConf = +e.target.value;
+  document.getElementById('team-conf-label').textContent =
+    minTeamConf === 0 ? 'Off' : minTeamConf + '%';
+  render();
+});
+document.getElementById('search').addEventListener('input', e => {
+  searchQuery = e.target.value.trim();
+  render();
+});
 
-      <div class="prob-row">
-        ${[0,1,2].map(i => `
-          <div class="prob-col${i === bestIdx ? ' best' : ''}">
-            <div class="p-lbl">${probLabels[i]}</div>
-            <div class="p-val">${probVals[i]}</div>
-          </div>
-        `).join('')}
-      </div>
-    `;
-    return card;
-  }
-
-  function escHtml(s) {
-    return String(s)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
-  }
-
-  // ── Event listeners ────────────────────────────────────────────────────────
-  document.getElementById('conf-slider').addEventListener('input', e => {
-    minConf = +e.target.value;
-    document.getElementById('conf-label').textContent = minConf + '%';
-    render();
-  });
-
-  document.getElementById('search').addEventListener('input', e => {
-    searchQuery = e.target.value.trim();
-    render();
-  });
-
-  loadData();
+loadData();
 </script>
 </body>
 </html>

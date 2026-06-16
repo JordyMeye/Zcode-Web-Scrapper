@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "scrape_time": "2026-06-15T16:59:02.349514",
+  "scrape_time": "2026-06-16T10:02:17.783863",
   "source": "https://zcodesystem.com/scorespredictor/?hop=sportsmart",
   "filter": {
     "min_confidence": "60%"

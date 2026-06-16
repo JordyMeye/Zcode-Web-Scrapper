@@ -249,3 +249,26 @@ This tool is for informational purposes only. Sports predictions are never guara
 **Made with ❤️ for sports betting enthusiasts**
 
 *Remember: Bet smart, bet safe, bet responsibly!*
+
+
+Commands — from a fresh terminal
+
+# 1. Activate the virtual environment (always do this first)
+.\venv\Scripts\activate
+
+# 2. Scrape predictions (football + tennis)
+python run_all.py
+
+# 3. Open the dashboard in your browser
+python serve.py
+That's all you need for normal use. For individual scrapers:
+
+
+# Football only
+python -m sports.football.scraper
+
+# Tennis only
+python -m sports.tennis.scraper
+
+# Update match results (after games finish)
+python update_results.py
